@@ -29,10 +29,9 @@ client.on('message', async msg => {
 if(msg.content.startsWith(prefix+'say')){
 	//msg.delete();
 	var a=msg.content.replace(prefix+'say','');
-	var b = (msg.attachments).array();
 	if(a){
-	
-		if(b){
+	if (message.attachments.size > 0) {
+	var b = (msg.attachments).array();
 		msg.channel.send(a,{
 		 file: b[0].url
 	});
