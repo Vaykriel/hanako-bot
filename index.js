@@ -30,14 +30,15 @@ if(msg.content.startsWith(prefix+'say')){
 	//msg.delete();
 	var a=msg.content.replace(prefix+'say','');
 	var b = (msg.attachments).array();
-	if(a&&!b){
-		msg.channel.send(a);
-	}
-	if(a&&b){
+	if(a){
+		if(b){
 		msg.channel.send(a,{
 		 file: b[0].url
 	});
-	}
+	}else{
+		msg.channel.send(a);
+	}}
+	
 	
 	else{
 		msg.channel.send("Pesan tidak boleh kosong. \nContoh penggunaan: ``` "+prefix+"say Bebek Harom~```");
