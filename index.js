@@ -148,6 +148,18 @@ if(msg.content.startsWith(prefix + 'bird')) {
 if(msg.content.includes('😢')) {
 	msg.channel.send('Anjay Nangid 👊😎');
 }
+if (msg.content.startsWith(prefix+'avatar') {
+	if (args[0]) {
+		const user = getUserFromMention(args[0]);
+		if (!user) {
+			return msg.reply('Tidak dapat mengambil Avatar,pastikan pengguna yang anda mention valid.');
+		}
+
+		return msg.channel.send(`Avatar milik ${user.username}': ${user.displayAvatarURL}`);
+	}
+
+	return msg.channel.send(`${message.author.username}, Avatar anda: ${message.author.displayAvatarURL}`);
+}
 	//if(msg.content.startsWith(prefix + 'meme')) {
 	//	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
 	//	try {
@@ -179,6 +191,9 @@ if(msg.content.includes('😢')) {
 	//.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
 	.setTimestamp();
 	msg.channel.send(exampleEmbed);
+	}
+	if(msg.content.startsWith(prefix + 'leave ')) {
+	serverQueue.voiceChannel.leave();
 	}
 	
 if(msg.content.startsWith(prefix + 'play')) {
