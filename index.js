@@ -31,11 +31,13 @@ if(msg.content.startsWith(prefix+'say')){
 	var a=msg.content.replace(prefix+'say','');
 	var b = (msg.attachments).array();
 	if(a){
-		msg.channel.send(a);
+	
 		if(b){
 		msg.channel.send(a,{
 		 file: b[0].url
 	});
+	}else{
+			msg.channel.send(a);
 	}}
 	
 	else{
