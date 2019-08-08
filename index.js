@@ -177,7 +177,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 		return msg.channel.send(`Avatar milik ${user.username}': ${user.displayAvatarURL}`);
 	}
 
-	return msg.channel.send(`${message.author.username}, Avatar anda: ${message.author.displayAvatarURL}`);
+	return msg.channel.send(`${msg.author.username}, Avatar anda: ${msg.author.displayAvatarURL}`);
 }
 	//if(msg.content.startsWith(prefix + 'meme')) {
 	//	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
