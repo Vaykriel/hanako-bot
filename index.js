@@ -32,7 +32,6 @@ if(msg.content.startsWith(prefix+'say')){
 	if(a){
 		var b = (msg.attachments).array();
 		if(b){
-    ; //undefined
 	msg.channel.send(a,{
 		 file: b[0].url
 	});}
