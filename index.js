@@ -148,7 +148,7 @@ if(msg.content.startsWith(prefix + 'bird')) {
 if(msg.content.includes('😢')) {
 	msg.channel.send('Anjay Nangid 👊😎');
 }
-if (msg.content.startsWith(prefix+'avatar') {
+if (msg.content.startsWith(prefix+'avatar')){
 	if (args[0]) {
 		const user = getUserFromMention(args[0]);
 		if (!user) {
