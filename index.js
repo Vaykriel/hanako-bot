@@ -29,15 +29,14 @@ client.on('message', async msg => {
 if(msg.content.startsWith(prefix+'say')){
 	//msg.delete();
 	var a=msg.content.replace(prefix+'say','');
-	if(a){
 		var b = (msg.attachments).array();
-		if(b){
-	msg.channel.send(a,{
-		 file: b[0].url
-	});}
-	else{
+	if(a){
 		msg.channel.send(a);
-	}}
+	}else if(a&&b){
+			msg.channel.send(a,{
+		 file: b[0].url
+	});
+	}
 	else{
 		msg.channel.send("Pesan tidak boleh kosong. \nContoh penggunaan: ``` "+prefix+"say Bebek Harom~```");
 	}
