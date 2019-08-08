@@ -14,6 +14,21 @@ const youtube = new Youtube("AIzaSyCx0dxHHvP_ru_T9sTQT2lVSGxPrLMLYdA"); // inser
 var isPlaying; // we will use this variable to determine if a song is playing
 const queue = new Map();
 
+function getUserFromMention(mention) {
+	if (!mention) return;
+
+	if (mention.startsWith('<@') && mention.endsWith('>')) {
+		mention = mention.slice(2, -1);
+
+		if (mention.startsWith('!')) {
+			mention = mention.slice(1);
+		}
+
+		return client.users.get(mention);
+	}
+}
+
+
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: 'Ketik h? untuk bermain denganku!' }, status: 'online' });
   console.log(`Logged in as ${client.user.tag}!`);
@@ -149,6 +164,10 @@ if(msg.content.includes('😢')) {
 	msg.channel.send('Anjay Nangid 👊😎');
 }
 if (msg.content.startsWith(prefix+'avatar')){
+	const withoutPrefix = msg.content.slice(prefix.length);
+	const split = withoutPrefix.split(/ +/);
+	const command = split[0];
+	const args = split.slice(1);
 	if (args[0]) {
 		const user = getUserFromMention(args[0]);
 		if (!user) {
