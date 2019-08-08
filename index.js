@@ -35,7 +35,10 @@ if(msg.content.startsWith(prefix+'say')){
     ; //undefined
 	msg.channel.send(a,{
 		 file: b[0].url
-	});}}
+	});}
+	else{
+		msg.channel.send(a);
+	}}
 	else{
 		msg.channel.send("Pesan tidak boleh kosong. \nContoh penggunaan: ``` "+prefix+"say Bebek Harom~```");
 	}
