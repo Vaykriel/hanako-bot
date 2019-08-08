@@ -30,7 +30,7 @@ if(msg.content.startsWith(prefix+'say')){
 	//msg.delete();
 	var a=msg.content.replace(prefix+'say','');
 	if(a){
-	if (message.attachments.size > 0) {
+	if (msg.attachments.size > 0) {
 	var b = (msg.attachments).array();
 		msg.channel.send(a,{
 		 file: b[0].url
