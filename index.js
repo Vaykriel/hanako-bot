@@ -138,7 +138,7 @@ if(msg.content.startsWith(prefix + 'bird')) {
 			get('https://some-random-api.ml/animu/pat').then(res => {
 				const embed = new Discord.RichEmbed()
 				.setColor(warna)
-				.setTitle('${user.username},kamu telah di pat oleh ${msg.author.username}! >///<')
+				.setTitle(`${user.username},kamu telah di pat oleh ${msg.author.username}! >///<`)
 				.setImage(res.body.link)
 				.setTimestamp()
 				return msg.channel.send({embed});
@@ -185,7 +185,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 			return msg.reply('Tidak dapat mengambil Avatar,pastikan pengguna yang anda mention valid.');
 		}
 
-		return msg.channel.send(`Avatar milik ${user.username}': ${user.displayAvatarURL}`);
+		return msg.channel.send(`Avatar milik ${user.username}: ${user.displayAvatarURL}`);
 	}
 
 	return msg.channel.send(`${msg.author.username}, Avatar anda: ${msg.author.displayAvatarURL}`);
