@@ -250,12 +250,12 @@ if (msg.content.startsWith(prefix+'avatar')){
 	prefix+'bird \n Bot akan mengirim gambar burung secara acak.\n'+
 	prefix+'pat \n Bot akan mengirim GIF Headpat secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n'+
 	prefix+'hug \n Bot akan mengirim GIF Peluk secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n',true)
-	.addField(prefix+'play', 'Bot akan memutar lagu sesuai input user.Parameter dapat berupa link video langsung maupun Judul lagu.', true)
-	.addField(prefix+'pause', 'Bot akan menghentikan lagu sementara.', true)
-	.addField(prefix+'stop', 'Bot akan menghentikan lagu.', true)
-	.addField(prefix+'queue', 'Menampilkan antrian lagu.', true)
-	.addField(prefix+'np', 'Menampilkan judul lagu yang sedang dimainkan.', true)
-	.addField(prefix+'lyrics', 'Bot akan mengambil lirik lagu sesuai input user.(Sementara ini lirik terbatas pada 1024 karakter)', true)
+	.addField('Musik', prefix+'play \n Bot akan memutar lagu sesuai input user.Parameter dapat berupa link video langsung maupun Judul lagu.'+
+	prefix+'pause \n Bot akan menghentikan lagu sementara.'+
+	prefix+'stop \n Bot akan menghentikan lagu.'+
+	prefix+'queue \n Menampilkan antrian lagu.'+
+	prefix+'np \n Menampilkan judul lagu yang sedang dimainkan.'+
+	prefix+'lyrics \n Bot akan mengambil lirik lagu sesuai input user.(Sementara ini lirik terbatas pada 1024 karakter)', true)
 	//.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
 	.setTimestamp();
 	msg.channel.send(exampleEmbed);
