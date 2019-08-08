@@ -242,14 +242,14 @@ if (msg.content.startsWith(prefix+'avatar')){
 		const exampleEmbed = new Discord.RichEmbed()
 	.setColor(warna)
 	.setTitle('Daftar Perintah/Command Bot Harom.')
-	.addField(prefix+'cmd / '+prefix+'help', 'Menampilkan \n pesan ini.', true)
-	.addField(prefix+'say', 'Bot akan mengirim pesan berdasarkan input user.', true)
-	.addField(prefix+'avatar', 'Bot akan mengirim foto profil / Avatar pengirim pesan , mention seseorang untuk membuat Bot mengambil Avatarnya.', true)
-	.addField(prefix+'cat', 'Bot akan mengirim gambar kucing secara acak.', true)
-	.addField(prefix+'dog', 'Bot akan mengirim gambar anjing secara acak.', true)
-	.addField(prefix+'bird', 'Bot akan mengirim gambar burung secara acak.', true)
-	.addField(prefix+'pat', 'Bot akan mengirim GIF Headpat secara acak.(User harus Mention seseorang agar perintah ini bekerja)', true)
-	.addField(prefix+'hug', 'Bot akan mengirim GIF Peluk secara acak.(User harus Mention seseorang agar perintah ini bekerja)', true)
+	.addField(prefix+'cmd / '+prefix+'help', 'Menampilkan pesan ini.', true)
+	.addField('Fun',prefix+'say \n Bot akan mengirim pesan berdasarkan input user.\n'+
+	prefix+'avatar \n Bot akan mengirim foto profil / Avatar pengirim pesan , mention seseorang untuk membuat Bot mengambil Avatarnya.\n'+
+	prefix+'cat \n Bot akan mengirim gambar kucing secara acak.\n'+
+	prefix+'dog \n Bot akan mengirim gambar anjing secara acak.\n'+
+	prefix+'bird \n Bot akan mengirim gambar burung secara acak.\n'+
+	prefix+'pat \n Bot akan mengirim GIF Headpat secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n'+
+	prefix+'hug \n Bot akan mengirim GIF Peluk secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n',true)
 	.addField(prefix+'play', 'Bot akan memutar lagu sesuai input user.Parameter dapat berupa link video langsung maupun Judul lagu.', true)
 	.addField(prefix+'pause', 'Bot akan menghentikan lagu sementara.', true)
 	.addField(prefix+'stop', 'Bot akan menghentikan lagu.', true)
