@@ -146,7 +146,7 @@ if(msg.content.startsWith(prefix + 'bird')) {
 		console.log(target);
 	}}
 if(msg.content.includes('😢')) {
-	msg.channel.send('Anjay Nangid 👊😎');
+	msg.channel.send('😢');
 }
 	//if(msg.content.startsWith(prefix + 'meme')) {
 	//	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
