@@ -138,7 +138,38 @@ if(msg.content.startsWith(prefix + 'bird')) {
 			get('https://some-random-api.ml/animu/pat').then(res => {
 				const embed = new Discord.RichEmbed()
 				.setColor(warna)
-				.setTitle(`${user.username},kamu telah di pat oleh ${msg.author.username}! >///<`)
+				.setTitle(` ${user.username},kamu telah di pat oleh ${msg.author.username} ! >///<`)
+				.setImage(res.body.link)
+				.setTimestamp()
+				return msg.channel.send({embed});
+			});
+		} catch(err) {
+			return msg.channel.send(err.stack);
+		}
+	}else{
+		
+	}}}
+	if(msg.content.startsWith(prefix + 'hug')) {
+	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
+	var target=msg.content.replace(prefix+'hug','');
+	
+	if(target){
+		const withoutPrefix = msg.content.slice(prefix.length);
+	const split = withoutPrefix.split(/ +/);
+	const command = split[0];
+	const args = split.slice(1);
+	if (args[0]) {
+		const user = getUserFromMention(args[0]);
+		if (!user) {
+			return msg.reply('Mention seseorang untuk menggunakan perintah ini.');
+		}
+		
+		try {
+			
+			get('https://some-random-api.ml/animu/hug').then(res => {
+				const embed = new Discord.RichEmbed()
+				.setColor(warna)
+				.setTitle(` ${user.username},kamu telah di peluk oleh ${msg.author.username} ! <3`)
 				.setImage(res.body.link)
 				.setTimestamp()
 				return msg.channel.send({embed});
@@ -212,12 +243,20 @@ if (msg.content.startsWith(prefix+'avatar')){
 	.setColor(warna)
 	.setTitle('Daftar Perintah/Command Bot Harom.')
 	.addField(prefix+'cmd / '+prefix+'help', 'Menampilkan pesan ini.', true)
+	.addField('Fun', '', true)
 	.addField(prefix+'say', 'Bot akan mengirim pesan berdasarkan input user.', true)
 	.addField(prefix+'cat', 'Bot akan mengirim gambar kucing secara acak.', true)
 	.addField(prefix+'dog', 'Bot akan mengirim gambar anjing secara acak.', true)
 	.addField(prefix+'bird', 'Bot akan mengirim gambar burung secara acak.', true)
-	.addField(prefix+'pat', 'Bot akan mengirim GIF Headpat secara acak.', true)
+	.addField(prefix+'pat', 'Bot akan mengirim GIF Headpat secara acak.(User harus Mention seseorang agar perintah ini bekerja)', true)
+	.addField(prefix+'hug', 'Bot akan mengirim GIF Peluk secara acak.(User harus Mention seseorang agar perintah ini bekerja)', true)
+	.addField('Musik', '', true)
 	.addField(prefix+'play', 'Bot akan memutar lagu sesuai input user.Parameter dapat berupa link video langsung maupun Judul lagu.', true)
+	.addField(prefix+'pause', 'Bot akan menghentikan lagu sementara.', true)
+	.addField(prefix+'stop', 'Bot akan menghentikan lagu.', true)
+	.addField(prefix+'queue', 'Menampilkan antrian lagu.', true)
+	.addField(prefix+'np', 'Menampilkan judul lagu yang sedang dimainkan.', true)
+	.addField(prefix+'lyrics', 'Bot akan mengambil lirik lagu sesuai input user.(Sementara ini lirik terbatas pada 1024 karakter)', true)
 	//.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
 	.setTimestamp();
 	msg.channel.send(exampleEmbed);
@@ -254,7 +293,7 @@ if(msg.content.startsWith(prefix + 'play')) {
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
 					msg.channel.send(`
-__**Song selection:**__
+__**Pemilihan lagu :**__
 ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}
 Silahkan pilih lagu. (1-10)
 					`);
@@ -291,37 +330,31 @@ Silahkan pilih lagu. (1-10)
 		serverQueue.connection.dispatcher.end('Stop command has been used!');
 		return msg.channel.send('Pemutaran lagu telah berhenti.');
 		return undefined;
-	}  if (msg.content.startsWith(prefix + 'volume')) {
-		if (!msg.member.voiceChannel) return msg.channel.send('Anda harus berada dalam voice channel.');
-		if (!serverQueue) return msg.channel.send('Antrian lagu kosong.');
-		if (!args[1]) return msg.channel.send(`Volume saat ini: **${serverQueue.volume}**`);
-		serverQueue.volume = args[1];
-		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 5);
-		return msg.channel.send(`I set the volume to: **${args[1]}**`);
-	}  if (msg.content.startsWith(prefix + 'np')) {
+	}  
+	if (msg.content.startsWith(prefix + 'np')) {
 		if (!serverQueue) return msg.channel.send('Tidak ada lagu yang dimainkan.');
 		return msg.channel.send(`🎶 Memainkan: **${serverQueue.songs[0].title}**`);
 	}  if (msg.content.startsWith(prefix + 'queue')) {
 		if (!serverQueue) return msg.channel.send('Tidak ada lagu yang dimainkan.');
 		return msg.channel.send(`
-__**Song queue:**__
+__**Antrian lagu:**__
 ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
-**Now playing:** ${serverQueue.songs[0].title}
+**Sedang memainkan:** ${serverQueue.songs[0].title}
 		`);
 	}  if (msg.content.startsWith(prefix + 'pause')) {
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
-			return msg.channel.send('⏸ Paused the music for you!');
+			return msg.channel.send('⏸ Lagu telah di pause!');
 		}
-		return msg.channel.send('There is nothing playing.');
+		return msg.channel.send('Tidak ada yang dimainkan.');
 	}  if (msg.content.startsWith(prefix + 'resume')) {
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
-			return msg.channel.send('▶ Resumed the music for you!');
+			return msg.channel.send('▶ Lagu telah dimainkan kembali!');
 		}
-		return msg.channel.send('There is nothing playing.');
+		return msg.channel.send('Tidak ada yang dimainkan.');
 	}
 
 	return undefined;
@@ -361,7 +394,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		serverQueue.songs.push(song);
 		console.log(serverQueue.songs);
 		if (playlist) return undefined;
-		else return msg.channel.send(`✅ **${song.title}** has been added to the queue!`);
+		else return msg.channel.send(`✅ **${song.title}** telah ditambahkan ke dalam antrian!`);
 	}
 	return undefined;
 }
@@ -386,7 +419,7 @@ function play(guild, song) {
 		.on('error', error => console.error(error));
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
-	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
+	serverQueue.textChannel.send(`🎶 Memainkan: **${song.title}**`);
 
 
 
