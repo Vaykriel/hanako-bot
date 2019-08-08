@@ -121,13 +121,24 @@ if(msg.content.startsWith(prefix + 'bird')) {
 	if(msg.content.startsWith(prefix + 'pat')) {
 	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
 	var target=msg.content.replace(prefix+'pat','');
+	
 	if(target){
+		const withoutPrefix = msg.content.slice(prefix.length);
+	const split = withoutPrefix.split(/ +/);
+	const command = split[0];
+	const args = split.slice(1);
+	if (args[0]) {
+		const user = getUserFromMention(args[0]);
+		if (!user) {
+			return msg.reply('Mention seseorang untuk menggunakan perintah ini.');
+		}
+		
 		try {
-			msg.channel.send(msg.author);
+			
 			get('https://some-random-api.ml/animu/pat').then(res => {
 				const embed = new Discord.RichEmbed()
 				.setColor(warna)
-				.setTitle('>///<')
+				.setTitle('${user.username},kamu telah di pat oleh ${msg.author.username}! >///<')
 				.setImage(res.body.link)
 				.setTimestamp()
 				return msg.channel.send({embed});
@@ -137,7 +148,7 @@ if(msg.content.startsWith(prefix + 'bird')) {
 		}
 	}else{
 		
-	}}
+	}}}
 	if(msg.content.startsWith(prefix + 'lyrics')) {
 	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
 	var target=msg.content.replace(prefix+'lyrics','');
