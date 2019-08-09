@@ -243,19 +243,19 @@ if (msg.content.startsWith(prefix+'avatar')){
 	.setColor(warna)
 	.setTitle('Daftar Perintah/Command Bot Harom.')
 	.addField(prefix+'cmd / '+prefix+'help', 'Menampilkan pesan ini.', true)
-	.addField('Fun',prefix+'say \n Bot akan mengirim pesan berdasarkan input user.\n'+
-	prefix+'avatar \n Bot akan mengirim foto profil / Avatar pengirim pesan , mention seseorang untuk membuat Bot mengambil Avatarnya.\n'+
-	prefix+'cat \n Bot akan mengirim gambar kucing secara acak.\n'+
-	prefix+'dog \n Bot akan mengirim gambar anjing secara acak.\n'+
-	prefix+'bird \n Bot akan mengirim gambar burung secara acak.\n'+
-	prefix+'pat \n Bot akan mengirim GIF Headpat secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n'+
-	prefix+'hug \n Bot akan mengirim GIF Peluk secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n',true)
-	.addField('Musik', prefix+'play \n Bot akan memutar lagu sesuai input user.Parameter dapat berupa link video langsung maupun Judul lagu.\n'+
-	prefix+'pause \n Bot akan menghentikan lagu sementara.'+
-	prefix+'stop \n Bot akan menghentikan lagu.'+
-	prefix+'queue \n Menampilkan antrian lagu.'+
-	prefix+'np \n Menampilkan judul lagu yang sedang dimainkan.'+
-	prefix+'lyrics \n Bot akan mengambil lirik lagu sesuai input user.(Sementara ini lirik terbatas pada 1024 karakter)', true)
+	.addField('Fun',prefix+'say \n Bot akan mengirim pesan berdasarkan input user.\n **'+
+	prefix+'avatar** \n Bot akan mengirim foto profil / Avatar pengirim pesan , mention seseorang untuk membuat Bot mengambil Avatarnya.\n **'+
+	prefix+'cat** \n Bot akan mengirim gambar kucing secara acak.\n **'+
+	prefix+'dog** \n Bot akan mengirim gambar anjing secara acak.\n **'+
+	prefix+'bird** \n Bot akan mengirim gambar burung secara acak.\n **'+
+	prefix+'pat** \n Bot akan mengirim GIF Headpat secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n**'+
+	prefix+'hug** \n Bot akan mengirim GIF Peluk secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n',true)
+	.addField('Musik', prefix+'play \n Bot akan memutar lagu sesuai input user.Parameter dapat berupa link video langsung maupun Judul lagu.\n**'+
+	prefix+'pause** \n Bot akan menghentikan lagu sementara.**'+
+	prefix+'stop** \n Bot akan menghentikan lagu.**'+
+	prefix+'queue** \n Menampilkan antrian lagu.**'+
+	prefix+'np** \n Menampilkan judul lagu yang sedang dimainkan.**'+
+	prefix+'lyrics** \n Bot akan mengambil lirik lagu sesuai input user.(Sementara ini lirik terbatas pada 1024 karakter)', true)
 	//.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
 	.setTimestamp();
 	msg.channel.send(exampleEmbed);
