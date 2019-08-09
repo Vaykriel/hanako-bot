@@ -243,7 +243,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 	.setColor(warna)
 	.setTitle('Daftar Perintah/Command Bot Harom.')
 	.addField(prefix+'cmd / '+prefix+'help', 'Menampilkan pesan ini.', true)
-	.addField('Fun','<b>'+prefix+'say </b>\n Bot akan mengirim pesan berdasarkan input user.\n\n'+
+	.addField('Fun',prefix+'say \n Bot akan mengirim pesan berdasarkan input user.\n'+
 	prefix+'avatar \n Bot akan mengirim foto profil / Avatar pengirim pesan , mention seseorang untuk membuat Bot mengambil Avatarnya.\n'+
 	prefix+'cat \n Bot akan mengirim gambar kucing secara acak.\n'+
 	prefix+'dog \n Bot akan mengirim gambar anjing secara acak.\n'+
