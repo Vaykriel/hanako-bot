@@ -251,10 +251,10 @@ if (msg.content.startsWith(prefix+'avatar')){
 	prefix+'pat** \n Bot akan mengirim GIF Headpat secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n**'+
 	prefix+'hug** \n Bot akan mengirim GIF Peluk secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n',true)
 	.addField('Musik', prefix+'play \n Bot akan memutar lagu sesuai input user.Parameter dapat berupa link video langsung maupun Judul lagu.\n**'+
-	prefix+'pause** \n Bot akan menghentikan lagu sementara.**'+
-	prefix+'stop** \n Bot akan menghentikan lagu.**'+
-	prefix+'queue** \n Menampilkan antrian lagu.**'+
-	prefix+'np** \n Menampilkan judul lagu yang sedang dimainkan.**'+
+	prefix+'pause** \n Bot akan menghentikan lagu sementara.\n **'+
+	prefix+'stop** \n Bot akan menghentikan lagu.\n **'+
+	prefix+'queue** \n Menampilkan antrian lagu.\n **'+
+	prefix+'np** \n Menampilkan judul lagu yang sedang dimainkan.\n **'+
 	prefix+'lyrics** \n Bot akan mengambil lirik lagu sesuai input user.(Sementara ini lirik terbatas pada 1024 karakter)', true)
 	//.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
 	.setTimestamp();
