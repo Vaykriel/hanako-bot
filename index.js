@@ -8,7 +8,7 @@ const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
 const Youtube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const youtube = new Youtube("AIzaSyCx0dxHHvP_ru_T9sTQT2lVSGxPrLMLYdA"); // insert here your Youtube API key, you can also store it as an environment variable or in a config.json
+const youtube = new Youtube("AIzaSyCTztcd_96O-sQm_L6ioFw5iTL9eL8TQ50"); // insert here your Youtube API key, you can also store it as an environment variable or in a config.json
 
 //var queue = []; // in this array we will store songs in queue
 var isPlaying; // we will use this variable to determine if a song is playing
