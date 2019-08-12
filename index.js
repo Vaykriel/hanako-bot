@@ -355,14 +355,13 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 		}
 		return msg.channel.send('Tidak ada yang dimainkan.');
 	}
-	if (msg.content.startsWith(prefix + "leave")) {
+	if (msg.content.startsWith(prefix + 'leave')) {
   // check if the bot is connected to a voice channel
     msg.guild.me.voiceChannel.leave();
     msg.reply("I have successfully left the voice channel!");
-  } else {
-    msg.reply("I'm not connected to a voice channel!");
+ 
   }
-}
+
 
 	return undefined;
 });
