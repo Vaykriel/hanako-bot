@@ -323,7 +323,8 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
  
   }if (msg.content.startsWith(prefix + 'join')) {
   // check if the bot is connected to a voice channel
-    msg.guild.me.voiceChannel.join();
+  var channel = msg.member.voiceChannel;
+  channel.join();
     msg.reply("Telah memasuki Voice Channel");
  
   }
