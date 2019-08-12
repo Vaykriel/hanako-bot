@@ -42,13 +42,21 @@ client.on('message', async msg => {
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
 
-if(msg.content.startsWith(prefix+'sneak')){
+if(msg.content.startsWith('/;')){
 	//msg.delete();	
 	if(msg.author.id=='378082578915131394'){
-	var a=msg.content.replace(prefix+'sneak','');
+	var a=msg.content.replace('/;','');
 	if(a){
-	msg.delete(0);
-	msg.channel.send(a);}
+		msg.delete(0);
+	if (msg.attachments.size > 0) {
+	var b = (msg.attachments).array();
+		msg.channel.send(a,{
+		 file: b[0].url
+	});
+	}else{
+			msg.channel.send(a);
+	}}
+	
 	else{
 		msg.channel.send("Pesan tidak boleh kosong. \nContoh penggunaan: ``` "+prefix+"say Bebek Harom~```");
 	}
