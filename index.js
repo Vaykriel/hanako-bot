@@ -164,28 +164,7 @@ if(msg.content.startsWith(prefix + 'bird')) {
 	}else{
 		
 	}}}
-	if(msg.content.startsWith(prefix + 'lyrics')) {
-	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
-	var target=msg.content.replace(prefix+'lyrics','');
-		console.log(target);
-	if(target){
-		try {
-			get('https://some-random-api.ml/lyrics?title='+target).then(res => {
-				if(res.body.lyrics.length>1024){
-					msg.channel.send('Lirik tidak bisa lebih dari 1024 karakter.');
-				}else{
-				const embed = new Discord.RichEmbed()
-				.setColor(warna)
-				.addField(res.body.title, res.body.lyrics)
-				.setTimestamp()
-				return msg.channel.send({embed});
-			}});
-		} catch(err) {
-			return msg.channel.send(err.stack);
-		}
-	}else{
-		console.log(target);
-	}}
+
 if(msg.content.includes('😢')) {
 	msg.channel.send('Anjay Nangid 👊😎');
 }
@@ -237,8 +216,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 	prefix+'pause** \n Bot akan menghentikan lagu sementara.\n **'+
 	prefix+'stop** \n Bot akan menghentikan lagu.\n **'+
 	prefix+'queue** \n Menampilkan antrian lagu.\n **'+
-	prefix+'np** \n Menampilkan judul lagu yang sedang dimainkan.\n **'+
-	prefix+'lyrics** \n Bot akan mengambil lirik lagu sesuai input user.(Sementara ini lirik terbatas pada 1024 karakter)', true)
+	prefix+'np** \n Menampilkan judul lagu yang sedang dimainkan.\n **', true)
 	//.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
 	.setTimestamp();
 	msg.channel.send(exampleEmbed);
