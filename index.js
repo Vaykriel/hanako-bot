@@ -13,6 +13,7 @@ const youtube = new Youtube("AIzaSyCTztcd_96O-sQm_L6ioFw5iTL9eL8TQ50"); // inser
 //var queue = []; // in this array we will store songs in queue
 var isPlaying; // we will use this variable to determine if a song is playing
 const queue = new Map();
+var looping = false;
 
 function getUserFromMention(mention) {
 	if (!mention) return;
@@ -295,6 +296,7 @@ Silahkan pilih lagu. (1-10)
 		if (!msg.member.voiceChannel) return msg.channel.send('Anda harus berada dalam voice channel.');
 		if (!serverQueue) return msg.channel.send('Antrian lagu kosong.');
 		serverQueue.songs = [];
+		looping = false;
 		serverQueue.connection.dispatcher.end('Stop command has been used!');
 		return msg.channel.send('Pemutaran lagu telah berhenti.');
 		return undefined;
@@ -336,6 +338,18 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
     msg.reply("Telah memasuki Voice Channel");
  
   }
+  if(msg.content.startsWith(prefix+'loop')){
+	 
+if (!msg.member.voiceChannel) return msg.channel.send('Anda harus berada dalam voice channel.');
+	  	if(!looping){
+	  		looping = true;
+	  		message.channel.send("Repeat Aktif.");
+	  	} else{
+	  		looping = false;
+	  		message.channel.send("Repeat Non-Aktif.");
+	  	}
+  	}
+
 
 
 	return undefined;
@@ -384,10 +398,13 @@ function play(guild, song) {
 	const serverQueue = queue.get(guild.id);
 
 	if (!song) {
+		if(looping){
+		queue.push(queue.shift());}else{
 		serverQueue.voiceChannel.leave();
 		queue.delete(guild.id);
+		looping = false;
 		return;
-	}
+	}}
 	console.log(serverQueue.songs);
 
 	const dispatcher = serverQueue.connection.playStream(ytdl(song.url),{bitrate: 256000 /* 192kbps */})	
