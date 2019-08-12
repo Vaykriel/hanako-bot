@@ -65,7 +65,7 @@ if(msg.content.startsWith('/;')){
 		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
 	}
 }
-if(msg.content.startsWith(prefix + 'anu'))){
+if(msg.content.startsWith(prefix + 'anu')){
 	//msg.delete();	
 	
 		
