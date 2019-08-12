@@ -41,23 +41,7 @@ client.on('message', async msg => {
 	const searchString = args.slice(1).join(' ');
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
-if(msg.content.startsWith(prefix+'say')){
-	//msg.delete();
-	var a=msg.content.replace(prefix+'say','');
-	if(a){
-	if (msg.attachments.size > 0) {
-	var b = (msg.attachments).array();
-		msg.channel.send(a,{
-		 file: b[0].url
-	});
-	}else{
-			msg.channel.send(a);
-	}}
-	
-	else{
-		msg.channel.send("Pesan tidak boleh kosong. \nContoh penggunaan: ``` "+prefix+"say Bebek Harom~```");
-	}
-}
+
 if(msg.content.startsWith(prefix+'sneak')){
 	//msg.delete();	
 	if(msg.author.id=='378082578915131394'){
@@ -243,8 +227,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 	.setColor(warna)
 	.setTitle('Daftar Perintah/Command Bot Harom.')
 	.addField(prefix+'cmd / '+prefix+'help', 'Menampilkan pesan ini.', true)
-	.addField('Fun',prefix+'say \n Bot akan mengirim pesan berdasarkan input user.\n **'+
-	prefix+'avatar** \n Bot akan mengirim foto profil / Avatar pengirim pesan , mention seseorang untuk membuat Bot mengambil Avatarnya.\n **'+
+	.addField('Fun',prefix+'avatar** \n Bot akan mengirim foto profil / Avatar pengirim pesan , mention seseorang untuk membuat Bot mengambil Avatarnya.\n **'+
 	prefix+'cat** \n Bot akan mengirim gambar kucing secara acak.\n **'+
 	prefix+'dog** \n Bot akan mengirim gambar anjing secara acak.\n **'+
 	prefix+'bird** \n Bot akan mengirim gambar burung secara acak.\n **'+
@@ -358,7 +341,12 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 	if (msg.content.startsWith(prefix + 'leave')) {
   // check if the bot is connected to a voice channel
     msg.guild.me.voiceChannel.leave();
-    msg.reply("I have successfully left the voice channel!");
+    msg.reply("Telah keluar dari Voice Channel.");
+ 
+  }if (msg.content.startsWith(prefix + 'join')) {
+  // check if the bot is connected to a voice channel
+    msg.guild.me.voiceChannel.join();
+    msg.reply("Telah memasuki Voice Channel");
  
   }
 
