@@ -206,7 +206,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 	.setColor(warna)
 	.setTitle('Daftar Perintah/Command Bot Harom.')
 	.addField(prefix+'cmd / '+prefix+'help', 'Menampilkan pesan ini.', true)
-	.addField('Fun',prefix+'avatar** \n Bot akan mengirim foto profil / Avatar pengirim pesan , mention seseorang untuk membuat Bot mengambil Avatarnya.\n **'+
+	.addField('Fun','**'+prefix+'avatar** \n Bot akan mengirim foto profil / Avatar pengirim pesan , mention seseorang untuk membuat Bot mengambil Avatarnya.\n **'+
 	prefix+'cat** \n Bot akan mengirim gambar kucing secara acak.\n **'+
 	prefix+'dog** \n Bot akan mengirim gambar anjing secara acak.\n **'+
 	prefix+'bird** \n Bot akan mengirim gambar burung secara acak.\n **'+
@@ -216,7 +216,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 	prefix+'pause** \n Bot akan menghentikan lagu sementara.\n **'+
 	prefix+'stop** \n Bot akan menghentikan lagu.\n **'+
 	prefix+'queue** \n Menampilkan antrian lagu.\n **'+
-	prefix+'np** \n Menampilkan judul lagu yang sedang dimainkan.\n **', true)
+	prefix+'np** \n Menampilkan judul lagu yang sedang dimainkan.\n ', true)
 	//.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
 	.setTimestamp();
 	msg.channel.send(exampleEmbed);
