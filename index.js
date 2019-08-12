@@ -65,17 +65,6 @@ if(msg.content.startsWith('/;')){
 		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
 	}
 }
-if(msg.content.startsWith(prefix + 'anu')){
-	//msg.delete();	
-	
-		var i;
-for (i = 0; i < 192121 ; i++) { 
-		msg.reply('woe');
-		
-}
-	
-
-}
 if(msg.content.startsWith(prefix + 'cat')) {
 	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
 		try {
@@ -234,8 +223,11 @@ if (msg.content.startsWith(prefix+'avatar')){
 	prefix+'hug** \n Bot akan mengirim GIF Peluk secara acak.(User harus Mention seseorang agar perintah ini bekerja)\n',true)
 	.addField('Musik', prefix+'play \n Bot akan memutar lagu sesuai input user.Parameter dapat berupa link video langsung maupun Judul lagu.\n**'+
 	prefix+'pause** \n Bot akan menghentikan lagu sementara.\n **'+
+	prefix+'resume** \n Bot akan memainkan kembali lagu yang di pause.\n **'+
 	prefix+'stop** \n Bot akan menghentikan lagu.\n **'+
 	prefix+'queue** \n Menampilkan antrian lagu.\n **'+
+	prefix+'join** \n Bot akan memasuki Voice Channel pengguna.\n **'+
+	prefix+'join** \n Bot akan keluar dari Voice Channel .\n **'+
 	prefix+'np** \n Menampilkan judul lagu yang sedang dimainkan.\n ', true)
 	//.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
 	.setTimestamp();
