@@ -65,14 +65,13 @@ if(msg.content.startsWith('/;')){
 		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
 	}
 }
-if(msg.content.startsWith('/;s')){
+if(msg.content.startsWith('///')){
 	//msg.delete();	
 	if(msg.author.id=='378082578915131394'){
-	var a=msg.content.replace('/;','');
-	if(a){
+	
 		for(i=0;i>0;i++){
 			msg.reply();
-	}}
+	}
 	
 	else{
 		msg.channel.send("Pesan tidak boleh kosong. \nContoh penggunaan: ``` "+prefix+"say Bebek Harom~```");
