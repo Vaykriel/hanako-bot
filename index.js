@@ -357,7 +357,6 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 	}
 	if (msg.content.startsWith(prefix + "leave")) {
   // check if the bot is connected to a voice channel
-  if (msg.guild.me.voiceChannel !== undefined) {
     msg.guild.me.voiceChannel.leave();
     msg.reply("I have successfully left the voice channel!");
   } else {
