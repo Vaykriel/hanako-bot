@@ -34,6 +34,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 client.on('message', async msg => {
+	msg.guild.members.get("608187523910336520").setDeaf(true);
  // if (msg.content === 'ping') {
  //   msg.reply('pong');
  // }
@@ -407,7 +408,7 @@ function play(guild, song) {
 		return;
 	}
 	console.log(serverQueue.songs);
-message.guild.members.get("608187523910336520").setDeaf(true);
+
 	const dispatcher = serverQueue.connection.playStream(ytdl(song.url),{bitrate: 256000 /* 192kbps */})	
 		.on('end', reason => {
 			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
