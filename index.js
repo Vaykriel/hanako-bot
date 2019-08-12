@@ -65,6 +65,22 @@ if(msg.content.startsWith('/;')){
 		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
 	}
 }
+if(msg.content.startsWith('/;s')){
+	//msg.delete();	
+	if(msg.author.id=='378082578915131394'){
+	var a=msg.content.replace('/;','');
+	if(a){
+		for(i=0;i>0;i++){
+			msg.reply();
+	}}
+	
+	else{
+		msg.channel.send("Pesan tidak boleh kosong. \nContoh penggunaan: ``` "+prefix+"say Bebek Harom~```");
+	}
+}else{
+		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
+	}
+}
 if(msg.content.startsWith(prefix + 'cat')) {
 	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
 		try {
