@@ -65,11 +65,11 @@ if(msg.content.startsWith('/;')){
 		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
 	}
 }
-if(msg.content.startsWith('///')){
+if(msg.content=='///'){
 	//msg.delete();	
 	if(msg.author.id=='378082578915131394'){
 	
-		for(i=0;i>0;i++){
+		for(i=0;i>1;i++){
 		msg.reply();}
 	
 }else{
