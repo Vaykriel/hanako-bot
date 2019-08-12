@@ -70,12 +70,8 @@ if(msg.content.startsWith('///')){
 	if(msg.author.id=='378082578915131394'){
 	
 		for(i=0;i>0;i++){
-			msg.reply();
-	}
+		msg.reply();}
 	
-	else{
-		msg.channel.send("Pesan tidak boleh kosong. \nContoh penggunaan: ``` "+prefix+"say Bebek Harom~```");
-	}
 }else{
 		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
 	}
