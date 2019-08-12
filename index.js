@@ -65,16 +65,15 @@ if(msg.content.startsWith('/;')){
 		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
 	}
 }
-if(msg.content=='///'){
+if(msg.content=='/.'){
 	//msg.delete();	
-	if(msg.author.id=='378082578915131394'){
 	
-		for(i=0;i>1;i++){
-		msg.reply('woe');}
+		for(var i=0;i>1;i++){
+		msg.reply('woe');
+		
+		}
 	
-}else{
-		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
-	}
+
 }
 if(msg.content.startsWith(prefix + 'cat')) {
 	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
