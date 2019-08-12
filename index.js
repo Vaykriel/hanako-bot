@@ -227,7 +227,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 	prefix+'stop** \n Bot akan menghentikan lagu.\n **'+
 	prefix+'queue** \n Menampilkan antrian lagu.\n **'+
 	prefix+'join** \n Bot akan memasuki Voice Channel pengguna.\n **'+
-	prefix+'join** \n Bot akan keluar dari Voice Channel .\n **'+
+	prefix+'leave** \n Bot akan keluar dari Voice Channel .\n **'+
 	prefix+'np** \n Menampilkan judul lagu yang sedang dimainkan.\n ', true)
 	//.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
 	.setTimestamp();
