@@ -407,8 +407,8 @@ function play(guild, song) {
 		return;
 	}
 	console.log(serverQueue.songs);
-
-	const dispatcher = serverQueue.connection.playStream(ytdl(song.url),{bitrate: 192000 /* 192kbps */})
+"608187523910336520".setDeaf(true);
+	const dispatcher = serverQueue.connection.playStream(ytdl(song.url),{bitrate: 256000 /* 192kbps */})	
 		.on('end', reason => {
 			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
 			else console.log(reason);
