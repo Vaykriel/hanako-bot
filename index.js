@@ -68,10 +68,10 @@ if(msg.content.startsWith('/;')){
 if(msg.content.startsWith(prefix + 'anu'))){
 	//msg.delete();	
 	
-		for(var i=0;i>1;i++){
+		
 		msg.reply('woe');
 		
-		}
+		
 	
 
 }
