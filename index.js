@@ -70,7 +70,7 @@ if(msg.content=='///'){
 	if(msg.author.id=='378082578915131394'){
 	
 		for(i=0;i>1;i++){
-		msg.reply();}
+		msg.reply('woe');}
 	
 }else{
 		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
