@@ -34,7 +34,6 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 client.on('message', async msg => {
-	msg.guild.members.get("608187523910336520").setDeaf(true);
  // if (msg.content === 'ping') {
  //   msg.reply('pong');
  // }
@@ -356,6 +355,15 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 		}
 		return msg.channel.send('Tidak ada yang dimainkan.');
 	}
+	if (msg.content.startsWith(prefix + "leave")) {
+  // check if the bot is connected to a voice channel
+  if (msg.guild.me.voiceChannel !== undefined) {
+    msg.guild.me.voiceChannel.leave();
+    msg.reply("I have successfully left the voice channel!");
+  } else {
+    msg.reply("I'm not connected to a voice channel!");
+  }
+}
 
 	return undefined;
 });
