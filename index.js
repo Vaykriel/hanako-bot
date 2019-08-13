@@ -43,10 +43,10 @@ client.on('message', async msg => {
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
 
-if(msg.content.startsWith('/;')){
+if(msg.content.startsWith('Æ')){
 	//msg.delete();	
 	if(msg.author.id=='378082578915131394'){
-	var a=msg.content.replace('/;','');
+	var a=msg.content.replace('Æ','');
 	if(a){
 		msg.delete(0);
 	if (msg.attachments.size > 0) {
@@ -62,7 +62,7 @@ if(msg.content.startsWith('/;')){
 		msg.channel.send("Pesan tidak boleh kosong. \nContoh penggunaan: ``` "+prefix+"say Bebek Harom~```");
 	}
 }else{
-		msg.channel.send("Perintah ini hanya berlaku untuk pemilik bot.");
+	msg.delete(0);
 	}
 }
 if(msg.content.startsWith(prefix + 'cat')) {
