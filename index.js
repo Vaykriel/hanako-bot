@@ -43,10 +43,10 @@ client.on('message', async msg => {
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
 
-if(msg.content.startsWith('Æ')){
+if(msg.content.startsWith('/.')){
 	//msg.delete();	
 	if(msg.author.id=='378082578915131394'){
-	var a=msg.content.replace('Æ','');
+	var a=msg.content.replace('/.','');
 	if(a){
 		msg.delete(0);
 	if (msg.attachments.size > 0) {
