@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { get } = require("snekfetch"); 
 const { Client, Util } = require('discord.js');
 const client = new Client({ disableEveryone: true });
-var prefix="h?";
+var prefix="h.";
 
 const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
@@ -31,7 +31,7 @@ function getUserFromMention(mention) {
 
 
 client.on('ready', () => {
-	client.user.setPresence({ game: { name: 'Ketik h? untuk bermain denganku!' }, status: 'online' });
+	client.user.setPresence({ game: { name: 'Ketik h. untuk bermain denganku!' }, status: 'online' });
   console.log(`Logged in as ${client.user.tag}!`);
 });
 client.on('message', async msg => {
@@ -64,7 +64,7 @@ if(msg.content.startsWith('/.')){
 }else{
 	msg.delete(0);
 	}
-}
+}	
 if(msg.content.startsWith(prefix + 'cat')) {
 	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
 		try {
