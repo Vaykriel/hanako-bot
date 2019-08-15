@@ -264,11 +264,12 @@ if(msg.content.startsWith(prefix + 'play')) {
 				try {
 					var videos = await youtube.searchVideos(searchString, 10);
 					let index = 0;
-					msg.channel.send(`
-__**Pemilihan lagu :**__
-${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}
-Silahkan pilih lagu. (1-10)
-					`);
+						var warna='#'+Math.floor(Math.random()*16777215).toString(16);
+		const exampleEmbed = new Discord.RichEmbed()
+	.setColor(warna)
+	.setTitle('Pilihan lagu:.')
+	.setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')} \n Silahkan pilih lagu. (1-10)`);
+	msg.channel.send(exampleEmbed);
 					// eslint-disable-next-line max-depth
 					try {
 						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
