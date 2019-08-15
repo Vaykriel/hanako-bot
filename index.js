@@ -256,6 +256,7 @@ if(msg.content.startsWith(prefix + 'play')) {
 				const video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
 				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
 			}
+			
 			return msg.channel.send(`✅ Playlist: **${playlist.title}** Telah ditambahkan dalam antrian!`);
 		} else {
 			try {
@@ -279,7 +280,9 @@ if(msg.content.startsWith(prefix + 'play')) {
 						});
 					} catch (err) {
 						console.error(err);
+						msg.channel.bulkDelete(2);
 						return msg.channel.send('Input tidak valid. Membatalkan.');
+						msg.delete(3000);
 					}
 					const videoIndex = parseInt(response.first().content);
 					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
@@ -392,8 +395,10 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 	} else {
 		serverQueue.songs.push(song);
 		console.log(serverQueue.songs);
-		if (playlist) return undefined;
-		else return msg.channel.send(`✅ **${song.title}** telah ditambahkan ke dalam antrian!`);
+		if (playlist){ return undefined;}
+		else { msg.channel.bulkDelete(2);
+		msg.channel.send(`✅ **${song.title}** telah ditambahkan ke dalam antrian!`);}
+		
 	}
 	return undefined;
 }
