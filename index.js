@@ -280,7 +280,7 @@ if(msg.content.startsWith(prefix + 'play')) {
 						});
 					} catch (err) {
 						console.error(err);
-						msg.channel.bulkDelete(2);
+						msg.channel.bulkDelete(1);
 						return msg.channel.send('Input tidak valid. Membatalkan.');
 						msg.delete(3000);
 					}
