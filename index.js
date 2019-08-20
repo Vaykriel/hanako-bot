@@ -268,8 +268,8 @@ if(msg.content.startsWith(prefix + 'play')) {
 						var warna='#'+Math.floor(Math.random()*16777215).toString(16);
 		const exampleEmbed = new Discord.RichEmbed()
 	.setColor(warna)
-	.setTitle('Pilihan lagu:.')
-	.setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')} \n Silahkan pilih lagu. (1-10)`);
+	.setTitle('Song selection : :.')
+	.setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')} \n Please choose a song. (1-10)`);
 	msg.channel.send(exampleEmbed);
 					// eslint-disable-next-line max-depth
 					try {
@@ -310,7 +310,7 @@ if(msg.content.startsWith(prefix + 'play')) {
 	}  
 	if (msg.content.startsWith(prefix + 'np')) {
 		if (!serverQueue) return msg.channel.send('Tidak ada lagu yang dimainkan.');
-		return msg.channel.send(`🎶 Memainkan: **${serverQueue.songs[0].title}**`);
+		return msg.channel.send(`🎶 Playing: **${serverQueue.songs[0].title}**`);
 	}  if (msg.content.startsWith(prefix + 'queue')) {
 		if (!serverQueue) return msg.channel.send('Tidak ada lagu yang dimainkan.');
 		return msg.channel.send(`
@@ -322,7 +322,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
-			return msg.channel.send('⏸ Lagu telah di pause!');
+			return msg.channel.send('⏸ Paused the song for you!');
 		}
 		return msg.channel.send('Tidak ada yang dimainkan.');
 	}  if (msg.content.startsWith(prefix + 'resume')) {
