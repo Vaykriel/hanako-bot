@@ -397,7 +397,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		console.log(serverQueue.songs);
 		if (playlist){ return undefined;}
 		else { msg.channel.bulkDelete(2);
-		msg.channel.send(`✅ **${song.title}** has beed added to the queue!`);}
+		msg.channel.send(`✅ **${song.title}** has been added to the queue!`);}
 		
 	}
 	return undefined;
