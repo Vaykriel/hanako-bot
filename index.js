@@ -64,13 +64,6 @@ if(msg.content.startsWith('/.')){
 }else{
 	msg.delete(0);
 	}
-}	if(msg.content.startsWith('/ngambek')){
-	msg.delete(0);
-	//msg.delete();	
-	if(msg.author.id=='378082578915131394'){
-		
-		msg.guild.leave();
-	}
 }	
 if(msg.content.startsWith(prefix + 'cat')) {
 	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
