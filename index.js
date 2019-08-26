@@ -3,7 +3,6 @@ const { get } = require("snekfetch");
 const { Client, Util } = require('discord.js');
 const client = new Client({ disableEveryone: true });
 var prefix="h.";
-
 const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
 const Youtube = require('simple-youtube-api');
@@ -33,16 +32,12 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 client.on('message', async msg => {
- // if (msg.content === 'ping') {
- //   msg.reply('pong');
- // }
  const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
 
 if(msg.content.startsWith('/.')){
-	//msg.delete();	
 	if(msg.author.id=='378082578915131394'){
 	var a=msg.content.replace('/.','');
 	if(a){
@@ -422,7 +417,7 @@ function play(guild, song) {
 			play(guild, serverQueue.songs[0]);
 		})
 		.on('error', error => console.error(error));
-	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
+	dispatcher.setVolumeLogarithmic(serverQueue.volume / 10);
 
 	serverQueue.textChannel.send(`🎶 Playing: **${song.title}**`);
 
