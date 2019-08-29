@@ -58,6 +58,11 @@ if(msg.content.startsWith('/.')){
 	msg.delete(0);
 	}
 }	
+if(msg.content=="P") {
+	if(msg.guild.id=='564633296609476618'){
+		msg.channel.send('Pa pe pa pe BAPACC KAU PEKAI !1!1!1!');
+	}
+}
 if(msg.content.startsWith(prefix + 'cat')) {
 	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
 		try {
