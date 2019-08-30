@@ -303,14 +303,14 @@ if(msg.content.startsWith(prefix + 'play')) {
 		serverQueue.songs = [];
 		looping = false;
 		serverQueue.connection.dispatcher.end('Stop command has been used!');
-		return msg.channel.send('Pemutaran lagu telah berhenti.');
+		return msg.channel.send('Playback Stopped.');
 		return undefined;
 	}  
 	if (msg.content.startsWith(prefix + 'np')) {
-		if (!serverQueue) return msg.channel.send('Tidak ada lagu yang dimainkan.');
+		if (!serverQueue) return msg.channel.send('Nothing playing.');
 		return msg.channel.send(`🎶 Playing: **${serverQueue.songs[0].title}**`);
 	}  if (msg.content.startsWith(prefix + 'queue')) {
-		if (!serverQueue) return msg.channel.send('Tidak ada lagu yang dimainkan.');
+		if (!serverQueue) return msg.channel.send('Nothing playing.');
 		return msg.channel.send(`
 __**Song Queue:**__
 ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
@@ -343,17 +343,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
     msg.reply("I joined the Voice Channel");
  
   }
-  if(msg.content.startsWith(prefix+'loop')){
-	 
-if (!msg.member.voiceChannel) return msg.channel.send("You're not in a Voice Channel!");
-	  	if(!looping){
-	  		looping = true;
-	  		message.channel.send("Repeat Aktif.");
-	  	} else{
-	  		looping = false;
-	  		message.channel.send("Repeat Non-Aktif.");
-	  	}
-  	}
+
 
 
 
@@ -414,7 +404,7 @@ function play(guild, song) {
 	}}
 	console.log(serverQueue.songs);
 
-	const dispatcher = serverQueue.connection.playStream(ytdl(song.url),{bitrate: 512000 /* 192kbps */})	
+	const dispatcher = serverQueue.connection.playStream(ytdl(song.url),{bitrate: 5120000 /* 192kbps */})	
 		.on('end', reason => {
 			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
 			else console.log(reason);
