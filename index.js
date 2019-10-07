@@ -62,6 +62,10 @@ if(msg.content=="P") {
 	if(msg.guild.id=='564633296609476618'){
 		msg.channel.send('https://i.imgur.com/tcqrbjr.png');
 	}
+}if(msg.content=="p") {
+	if(msg.guild.id=='564633296609476618'){
+		msg.channel.send('https://i.imgur.com/tcqrbjr.png');
+	}
 }
 if(msg.content.startsWith(prefix + 'cat')) {
 	var warna='#'+Math.floor(Math.random()*16777215).toString(16);
