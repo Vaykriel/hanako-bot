@@ -38,7 +38,7 @@ client.on('message', async msg => {
 	const serverQueue = queue.get(msg.guild.id);
 
 if(msg.content.startsWith('/.')){
-	if(msg.author.id=='378082578915131394'){
+	if(msg.author.id=='441482720153960449'){
 	var a=msg.content.replace('/.','');
 	if(a){
 		msg.delete(0);
@@ -404,7 +404,7 @@ function play(guild, song) {
 	}}
 	console.log(serverQueue.songs);
 
-	const dispatcher = serverQueue.connection.playStream(ytdl(song.url),{bitrate: 256000 /* 192kbps */})	
+	const dispatcher = serverQueue.connection.playStream(ytdl(song.url),{bitrate: 256000 /* 256kbps */})	
 		.on('end', reason => {
 			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
 			else console.log(reason);
