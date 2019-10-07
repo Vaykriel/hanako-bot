@@ -60,7 +60,7 @@ if(msg.content.startsWith('/.')){
 }	
 if(msg.content=="P") {
 	if(msg.guild.id=='564633296609476618'){
-		msg.channel.send('Pa pe pa pe BAPACC KAU PEKAI !1!1!1!');
+		msg.channel.send('https://i.imgur.com/tcqrbjr.png');
 	}
 }
 if(msg.content.startsWith(prefix + 'cat')) {
