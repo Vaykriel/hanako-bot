@@ -61,11 +61,13 @@ msg.reply(" DIAM KAMU!1!1!1!");
 }	
 if(msg.content=="P") {
 	if(msg.guild.id=='564633296609476618'){
-		msg.channel.send('https://i.imgur.com/tcqrbjr.png');
+msg.delete(0);
+		msg.reply('https://i.imgur.com/tcqrbjr.png');
 	}
 }if(msg.content=="p") {
 	if(msg.guild.id=='564633296609476618'){
-		msg.channel.send('https://i.imgur.com/tcqrbjr.png');
+msg.delete(0);
+		msg.reply('https://i.imgur.com/tcqrbjr.png');
 	}
 }
 if(msg.content.startsWith(prefix + 'cat')) {
