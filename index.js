@@ -56,6 +56,7 @@ if(msg.content.startsWith('/.')){
 	}
 }else{
 	msg.delete(0);
+msg.reply(" DIAM KAMU!1!1!1!");
 	}
 }	
 if(msg.content=="P") {
