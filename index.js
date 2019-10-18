@@ -432,4 +432,4 @@ function play(guild, song) {
 
 }
 
-client.login('NjA4MTg3NTIzOTEwMzM2NTIw.XUkiVQ.1bWoKSrVGoXAEdVSBI-ULVAEElY');
+client.login('NjM0NjQwMTA5OTI0MjUzNjk2.XaldfQ.t_EgtGcP6I7dx96Me5X-GwrzJGQ');
