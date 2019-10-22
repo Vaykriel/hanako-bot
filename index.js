@@ -63,13 +63,13 @@ if(msg.content=="P") {
 	if(msg.guild.id=='564633296609476618'){
 msg.delete(0);
 		msg.reply('jadi gini ya kalo mau nanya atau ngomongin sesuatu itu awalin pake salam atau apa kek jangan spam-spam "P" kayak orang arab yang baru kenal huruf P.');
-msg.channel.send("https://i.imgur.com/tcqrbjr.png");
+msg.channel.send("https://cdn.discordapp.com/attachments/564696216756158464/636325264535715851/tcqrbjr.png");
 	}
 }if(msg.content=="p") {
 	if(msg.guild.id=='564633296609476618'){
 msg.delete(0);
 msg.reply('jadi gini ya kalo mau nanya atau ngomongin sesuatu itu awalin pake salam atau apa kek jangan spam-spam "P" kayak orang arab yang baru kenal huruf P.');
-msg.channel.send("https://i.imgur.com/tcqrbjr.png");
+msg.channel.send("https://cdn.discordapp.com/attachments/564696216756158464/636325264535715851/tcqrbjr.png");
 	}
 }
 if(msg.content.startsWith(prefix + 'cat')) {
