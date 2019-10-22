@@ -181,9 +181,7 @@ if(msg.content.startsWith(prefix + 'bird')) {
 		
 	}}}
 
-if(msg.content.includes('😢')) {
-	msg.channel.send('Anjay Nangid 👊😎');
-}
+
 if (msg.content.startsWith(prefix+'avatar')){
 	const withoutPrefix = msg.content.slice(prefix.length);
 	const split = withoutPrefix.split(/ +/);
