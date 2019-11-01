@@ -30,7 +30,6 @@ function getUserFromMention(mention) {
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: 'Type ' + prefix + ' to play with me!' }, status: 'online' });
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setUsername("Bebek Harom");
 });
 client.on('message', async msg => {
  const args = msg.content.split(' ');
@@ -38,6 +37,15 @@ client.on('message', async msg => {
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
 
+
+if(msg.content=="Sepi") {
+if(msg.guild.id=='564633296609476618'){
+	msg.author.send("https://cdn.discordapp.com/attachments/531091986300796941/636144876014141440/au_ah.png");
+}}
+if(msg.content=="sepi") {
+if(msg.guild.id=='564633296609476618'){
+	msg.author.send("https://cdn.discordapp.com/attachments/531091986300796941/636144876014141440/au_ah.png");
+}}
 if(msg.content.startsWith('/.')){
 	if(msg.author.id=='441482720153960449'){
 	var a=msg.content.replace('/.','');
