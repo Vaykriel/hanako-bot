@@ -30,6 +30,7 @@ function getUserFromMention(mention) {
 client.on('ready', () => {
 	client.user.setPresence({ game: { name: 'Type ' + prefix + ' to play with me!' }, status: 'online' });
   console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setUsername("Bebek Harom");
 });
 client.on('message', async msg => {
  const args = msg.content.split(' ');
