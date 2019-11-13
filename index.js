@@ -225,7 +225,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 	prefix+'bird** \n Bot will send a random bird image.\n **'+
 	prefix+'pat** \n  Bot will send a random patting GIF (Must mention someone.)\n**'+
 	prefix+'hug** \n  Bot will send a random hugging GIF (Must mention someone.)\n',true)
-	.addField('Musik', prefix+'play \n The bot will play songs according to user input. Parameters can be in the form of live video links or song titles.\n**'+
+	.addField('Music', prefix+'play \n The bot will play songs according to user input. Parameters can be in the form of live video links or song titles.\n**'+
 	prefix+'pause** \n Pause the song.\n **'+
 	prefix+'resume** \n Resume the song.\n **'+
 	prefix+'stop** \n Clears playlist, stops playback and disconnects from VC.\n **'+
