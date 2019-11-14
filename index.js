@@ -218,7 +218,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 		const exampleEmbed = new Discord.RichEmbed()
 	.setColor(warna)
 	.setTitle('Commands')
-	.addField('Help',prefix+'cmd / '+prefix+'help', 'Display this message.')
+	.addField(prefix+'cmd / '+prefix+'help', 'Display this message.', true)
 	.addField('Fun','**'+prefix+'avatar** \n The bot will send the senders profile photo / avatar, mention someone display their avatar. \n ** '+
 	prefix+'cat** \n Bot will send a random cat image.\n **'+
 	prefix+'dog** \n Bot will send a random dog image.\n **'+
