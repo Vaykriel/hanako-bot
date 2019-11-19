@@ -28,7 +28,7 @@ function getUserFromMention(mention) {
 
 
 client.on('ready', () => {
-	client.user.setPresence({ game: { name: 'Type ' + prefix + ' to play with me!' }, status: 'online' });
+	client.user.setPresence({ game: { name: 'Type ' + prefix + 'help to play with me!' }, status: 'online' });
   console.log(`Logged in as ${client.user.tag}!`);
 });
 client.on('message', async msg => {
