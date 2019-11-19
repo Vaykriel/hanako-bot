@@ -137,7 +137,7 @@ if(msg.content.startsWith(prefix + 'bird')) {
 			get('https://some-random-api.ml/animu/pat').then(res => {
 				const embed = new Discord.RichEmbed()
 				.setColor(warna)
-				.setTitle(` $ {user.username}, you have been patted by $ {msg.author.username} ! >///<`)
+				.setTitle(` ${user.username},you've been patted by ${msg.author.username} ! <3`)
 				.setImage(res.body.link)
 				.setTimestamp()
 				return msg.channel.send({embed});
