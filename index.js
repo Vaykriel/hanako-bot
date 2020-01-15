@@ -243,7 +243,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 	
 if(msg.content.startsWith(prefix + 'play')) {
 	const serverQueue = queue.get(msg.guild.id);
-	const voiceChannel = msg.member.voice.channel;
+	const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send("You're not in a Voice Channel!");
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
@@ -299,12 +299,12 @@ if(msg.content.startsWith(prefix + 'play')) {
 		}
 	//});
 	} if (msg.content.startsWith(prefix + 'skip')) {
-		if (!msg.member.voice.channel) return msg.channel.send("You're not in a Voice Channel!");
+		if (!msg.member.voiceChannel) return msg.channel.send("You're not in a Voice Channel!");
 		if (!serverQueue) return msg.channel.send('Queue is empty.');
 		serverQueue.connection.dispatcher.end('Skip command has been used!');
 		return msg.channel.send('Skipped the song for you~.');
 	}  if (msg.content.startsWith(prefix + 'stop')) {
-		if (!msg.member.voice.channel) return msg.channel.send("You're not in a Voice Channel!");
+		if (!msg.member.voiceChannel) return msg.channel.send("You're not in a Voice Channel!");
 		if (!serverQueue) return msg.channel.send('Queue is empty.');
 		serverQueue.songs = [];
 		looping = false;
@@ -344,7 +344,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
  
   }if (msg.content.startsWith(prefix + 'join')) {
   // check if the bot is connected to a voice channel
-  var channel = msg.member.voice.channel;
+  var channel = msg.member.voiceChannel;
   channel.join();
     msg.reply("I joined the Voice Channel");
  
