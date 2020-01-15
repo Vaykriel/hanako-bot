@@ -400,14 +400,6 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 function play(guild, song) {
 	const serverQueue = queue.get(guild.id);
 
-	if (!song) {
-		if(looping){
-		queue.push(queue.shift());}else{
-		serverQueue.voiceChannel.leave();
-		queue.delete(guild.id);
-		looping = false;
-		return;
-	}}
 	console.log(serverQueue.songs);
 
 	const dispatcher = serverQueue.connection.playStream(ytdl(song.url),{bitrate: 256000 /* 256kbps */})	
