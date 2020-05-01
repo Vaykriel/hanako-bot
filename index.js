@@ -7,7 +7,7 @@ const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
 const Youtube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const youtube = new Youtube("AIzaSyCluMJOlvQrrRZtOW6niKx8AbRmaJptfwg"); 
+const youtube = new Youtube("AIzaSyDF4--yHOWl5-FemBVLeaO9xtjjF0a4icw"); 
 var isPlaying; // we will use this variable to determine if a song is playing
 const queue = new Map();
 var looping = false;
@@ -434,5 +434,6 @@ function play(guild, song) {
 	
 
 }
+
 
 client.login('NjM0NjQwMTA5OTI0MjUzNjk2.XaldfQ.t_EgtGcP6I7dx96Me5X-GwrzJGQ');
