@@ -436,4 +436,4 @@ function play(guild, song) {
 }
 
 
-client.login('NjM0NjQwMTA5OTI0MjUzNjk2.XaldfQ.t_EgtGcP6I7dx96Me5X-GwrzJGQ');
+client.login('NzI5MjkwOTM5Nzc2MTA2NTA2.XwG0sA.ucvpTz-RISPxTWrFa_zse7kR8TU');
