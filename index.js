@@ -39,7 +39,7 @@ client.on('message', async msg => {
 
 
 if(msg.content.startsWith('/.')){
-	if(msg.author.id=='441482720153960449'){
+	if(msg.author.id=='712501859721412669'){
 	var a=msg.content.replace('/.','');
 	if(a){
 		msg.delete(0);
