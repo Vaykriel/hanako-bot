@@ -5,12 +5,6 @@ const client = new Client({ disableEveryone: true });
 var prefix="h.";
 const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
-const Youtube = require('simple-youtube-api');
-const ytdl = require('ytdl-core');
-const youtube = new Youtube("AIzaSyDF4--yHOWl5-FemBVLeaO9xtjjF0a4icw"); 
-var isPlaying; // we will use this variable to determine if a song is playing
-const queue = new Map();
-var looping = false;
 
 function getUserFromMention(mention) {
 	if (!mention) return;
@@ -37,6 +31,15 @@ client.on('message', async msg => {
 	const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	const serverQueue = queue.get(msg.guild.id);
 
+if(msg.guild.id=='729296478337761292'){
+	
+if(msg.content.startsWith(prefix + 'pojok')){
+		if(msg.author.id=='712501859721412669'){
+			var isi=msg.content.replace(prefix +'pojok','');
+	client.guilds.get('564633296609476618').channels.get('564696216756158464').send(isi);
+
+		}
+}}
 
 if(msg.content.startsWith('/.')){
 	if(msg.author.id=='712501859721412669'){
