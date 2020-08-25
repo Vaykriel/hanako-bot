@@ -247,7 +247,7 @@ if (msg.content.startsWith(prefix+'avatar')){
 
 	
 
-}
+
 
 
 client.login('NzI5MjkwOTM5Nzc2MTA2NTA2.XwG0sA.ucvpTz-RISPxTWrFa_zse7kR8TU');
