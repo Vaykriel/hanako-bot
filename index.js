@@ -98,7 +98,8 @@ client.on('message', async msg => {
                     .setColor(warna)
                     .setTitle('Meow~')
                     .setImage(res.body.file)
-                    .setTimestamp()
+                    .setTimestamp() 
+					.setFooter('Powered by aws.random.cat')
                 return msg.channel.send({
                     embed
                 });
@@ -116,6 +117,7 @@ client.on('message', async msg => {
                     .setTitle('Woof~')
                     .setImage(res.body.message)
                     .setTimestamp()
+					.setFooter('Powered by dog.ceo/api')
                 return msg.channel.send({
                     embed
                 });
@@ -134,6 +136,7 @@ client.on('message', async msg => {
                     .setTitle('Chirp Chirp~')
                     .setImage(res.body.link)
                     .setTimestamp()
+					.setFooter('Powered by some-random-api.ml')
                 return msg.channel.send({
                     embed
                 });
@@ -165,6 +168,7 @@ client.on('message', async msg => {
                             .setTitle(` ${user.username},you've been patted by ${msg.author.username} ! <3`)
                             .setImage(res.body.link)
                             .setTimestamp()
+							.setFooter('Powered by some-random-api.ml')
                         return msg.channel.send({
                             embed
                         });
@@ -200,6 +204,7 @@ client.on('message', async msg => {
                             .setTitle(` ${user.username},you've been hugged by ${msg.author.username} ! <3`)
                             .setImage(res.body.link)
                             .setTimestamp()
+							.setFooter('Powered by some-random-api.ml')
                         return msg.channel.send({
                             embed
                         });
@@ -259,6 +264,7 @@ client.on('message', async msg => {
                 prefix + 'pat** \n  Bot will send a random patting GIF (Must mention someone.)\n**' +
                 prefix + 'hug** \n  Bot will send a random hugging GIF (Must mention someone.)\n', true)
             //.addField(prefix+'meme', 'Bot akan mengirim meme secara acak.', true)
+			
             .setTimestamp();
         msg.channel.send(exampleEmbed);
     }
