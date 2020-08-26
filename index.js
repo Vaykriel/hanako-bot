@@ -49,8 +49,8 @@ client.on('message', async msg => {
     if (msg.guild.id == '729296478337761292') {
 
         if (msg.content.startsWith(prefix + 'pojok')) {
-            if (msg.author.id == '712501859721412669') {
-                var isi = msg.content.replace(prefix + 'pojok', '');
+            if (msg.author.id == '712501859721412669') 	
+                var isi = msg.content.replace(prefix + 'pojok', '');	
                 client.guilds.get('564633296609476618').channels.get('564696216756158464').send(isi);
 
             }

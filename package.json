@@ -11,6 +11,7 @@
     "discord.js-commando": "^0.10.0",
     "ffmpeg": "0.0.4",
     "git": "^0.1.5",
+    "js-beautify": "^1.13.0",
     "opusscript": "0.0.6",
     "simple-youtube-api": "^5.2.1",
     "ytdl": "^0.12.0"
