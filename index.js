@@ -56,7 +56,7 @@ client.on('message', async msg => {
                 var isi = msg.content.replace(prefix + 'tea', '');	
                 client.guilds.get('564633296609476618').channels.get('619163009465450496').send(isi);
             }
-        }
+        
 	if (msg.content.startsWith(prefix + 'jg')) {	
                 var isi = msg.content.replace(prefix + 'jg', '');	
                 client.guilds.get('689478393598574605').channels.get('689686700393234494').send(isi);
