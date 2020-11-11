@@ -48,14 +48,21 @@ client.on('message', async msg => {
 
     if (msg.guild.id == '729296478337761292') {
 
-        if (msg.content.startsWith(prefix + 'pojok')) {
-            if (msg.author.id == '712501859721412669') 	
+        if (msg.content.startsWith(prefix + 'pojok')) {	
                 var isi = msg.content.replace(prefix + 'pojok', '');	
                 client.guilds.get('564633296609476618').channels.get('564696216756158464').send(isi);
-
+            }
+        if (msg.content.startsWith(prefix + 'tea')) {	
+                var isi = msg.content.replace(prefix + 'tea', '');	
+                client.guilds.get('564633296609476618').channels.get('619163009465450496').send(isi);
             }
         }
-    }
+	if (msg.content.startsWith(prefix + 'jg')) {	
+                var isi = msg.content.replace(prefix + 'jg', '');	
+                client.guilds.get('689478393598574605').channels.get('689686700393234494').send(isi);
+            }
+        }
+    
 
     if (msg.content.startsWith('/.')) {
         if (msg.author.id == '712501859721412669') {
@@ -286,4 +293,4 @@ client.on('message', async msg => {
 
 
 
-client.login('NzI5MjkwOTM5Nzc2MTA2NTA2.XwG0sA.ucvpTz-RISPxTWrFa_zse7kR8TU');
+client.login('NzI5MjkwOTM5Nzc2MTA2NTA2.XwGzHQ.Mos-2xL2dMrHI3DsUj0Y2IfJifg');
