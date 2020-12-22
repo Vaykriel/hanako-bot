@@ -85,18 +85,7 @@ client.on('message', async msg => {
             msg.reply(" Nice Try.");
         }
     }
-    if (msg.content == "P") {
-        if (msg.guild.id == '564633296609476618') {
-            msg.delete(0);
-            msg.channel.send("https://cdn.discordapp.com/attachments/564696216756158464/636325264535715851/tcqrbjr.png");
-        }
-    }
-    if (msg.content == "p") {
-        if (msg.guild.id == '564633296609476618') {
-            msg.delete(0);
-            msg.channel.send("https://cdn.discordapp.com/attachments/564696216756158464/636325264535715851/tcqrbjr.png");
-        }
-    }
+ 
     if (msg.content.startsWith(prefix + 'cat')) {
         var warna = '#' + Math.floor(Math.random() * 16777215).toString(16);
         try {
