@@ -282,4 +282,4 @@ client.on('message', async msg => {
 
 
 
-client.login('NzI5MjkwOTM5Nzc2MTA2NTA2.XwGzHQ.Mos-2xL2dMrHI3DsUj0Y2IfJifg');
+client.login('');
